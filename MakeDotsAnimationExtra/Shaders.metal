@@ -85,9 +85,9 @@ fragment float4 fragmentWaveLoop(Fragment input [[stage_in]],
     float dot = smoothstep(radius, radius - 0.01, dist);
     
     // Fade and pulse effects
-//    float fade = sin(fract(gridUV.x) * 3.14159 + time * 0.7) * 0.1 + 0.9;
-//    float pulse = sin(time * 2.0 + gridUV.y * 0.3) * 0.1 + 0.9;
-//    dot *= fade * pulse;
+    float fade = sin(fract(gridUV.x) * 3.14159 + time * 0.7) * 0.2 + 0.8;
+    float pulse = sin(time * 2.0 + gridUV.y * 0.3) * 0.45 + 0.6;
+    dot *= fade * pulse;
     
     // Solid white with intensity
     float intensity = dot * 1.3;
